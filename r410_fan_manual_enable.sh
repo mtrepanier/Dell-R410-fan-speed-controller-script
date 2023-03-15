@@ -41,3 +41,7 @@ IPMIPW=yourpassword
 
 # Force fan controls to be manual, NOTE!: resets only after complete power down!
 ipmitool -I lanplus -N 1 -R 1 -H $IPMIHOST -U $IPMIUSER -P $IPMIPW raw 0x30 0x30 0x01 0x00
+
+# Start the script to control fan based on temperature
+echo "Start python fan.py"
+/usr/bin/python3 /boot/config/scripts/fans/fan.py &
